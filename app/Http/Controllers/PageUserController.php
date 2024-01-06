@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Booking;
+use App\User;
 use Illuminate\Http\Request;
 
 class PageUserController extends Controller
@@ -19,7 +20,9 @@ class PageUserController extends Controller
         return view('admin.transaksi.index', ['booking' => $booking]);
     }
     public function customer()
+
     {
-        return view('admin.customer.index');
+        $cust = User::where('is_admin', 0)->get();
+        return view('admin.customer.index', ['cust' => $cust]);
     }
 }

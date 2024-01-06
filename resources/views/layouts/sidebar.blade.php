@@ -26,27 +26,28 @@
     <!-- Menu -->
     <div class="menu">
         <ul class="list">
-            {{-- @if (Auth::user()->is_admin === 1) --}}
-            <li class="header">MAIN NAVIGATION</li>
-            <li><a href="{{ route('admin.dashboard') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a></li>
-            <li class="open"><a href="{{ route('admin.mobil') }}"><i class="zmdi zmdi-blogger"></i><span>Data
-                        Mobil</span>
-                </a></li>
-            <li><a href="{{ route('admin.transaksi') }}"><i class="zmdi zmdi-plus-circle"></i><span>Transaksi</span>
-                </a></li>
-            <li><a href="{{ route('customer') }}"><i class="zmdi zmdi-sort-amount-desc"></i><span>Customer</span>
-                </a>
-            </li>
-            {{-- @else --}}
-            <li class="header">MAIN NAVIGATION</li>
-            <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a></li>
-            <li class="open"><a href="{{ route('user.sewa') }}"><i class="zmdi zmdi-blogger"></i><span>Sewa
-                        Mobil</span>
-                </a></li>
-            <li class="open"><a href="blog-dashboard.html"><i class="zmdi zmdi-blogger"></i><span>Kembalikan
-                        Mobil</span>
-                </a></li>
-            {{-- @endif --}}
+            @if (Auth::user()->is_admin === 1)
+                <li class="header">MAIN NAVIGATION</li>
+                <li><a href="{{ route('admin.dashboard') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a>
+                </li>
+                <li class="open"><a href="{{ route('admin.mobil') }}"><i class="zmdi zmdi-blogger"></i><span>Data
+                            Mobil</span>
+                    </a></li>
+                <li><a href="{{ route('admin.transaksi') }}"><i class="zmdi zmdi-plus-circle"></i><span>Transaksi</span>
+                    </a></li>
+                <li><a href="{{ route('customer') }}"><i class="zmdi zmdi-sort-amount-desc"></i><span>Customer</span>
+                    </a>
+                </li>
+            @else
+                <li class="header">MAIN NAVIGATION</li>
+                <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a></li>
+                <li class="open"><a href="{{ route('user.sewa') }}"><i class="zmdi zmdi-blogger"></i><span>Sewa
+                            Mobil</span>
+                    </a></li>
+                <li class="open"><a href="blog-dashboard.html"><i class="zmdi zmdi-blogger"></i><span>Kembalikan
+                            Mobil</span>
+                    </a></li>
+            @endif
             {{-- <li><a href="blog-grid.html"><i class="zmdi zmdi-grid"></i><span>Blog Grid</span> </a></li>
             <li><a href="blog-details.html"><i class="zmdi zmdi-label-alt"></i><span>Blog Single</span> </a></li> --}}
         </ul>

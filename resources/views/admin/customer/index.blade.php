@@ -1,5 +1,5 @@
 @extends('layouts.master')
-@section('title', 'Data Mobil')
+@section('title', 'Data Customer')
 @section('content')
     <div class="block-header">
         <div class="row">
@@ -8,6 +8,7 @@
                     <small>Data Customer</small>
                 </h2>
             </div>
+
             <div class="col-lg-5 col-md-6 col-sm-12">
                 <ul class="breadcrumb float-md-right">
                     <li class="breadcrumb-item"><a href="index.html"><i class="zmdi zmdi-home"></i> Home</a></li>
@@ -17,9 +18,7 @@
             </div>
         </div>
     </div>
-    {{-- <div class="container-fluid my-3"><a href="" class="btn btn-primary btn-xl">Tambah
-            Mata Pelajaran</a>
-    </div>
+
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
@@ -27,11 +26,20 @@
                     <thead>
                         <tr>
                             <th>No.</th>
-                            <th>Jurusan</th>
-                            <th>Nama Mat Pelajaran</th>
-                            <th>Deskripsi</th>
-                            <th>Aksi</th>
+                            <th>Nama</th>
+                            <th>Alamat</th>
+                            <th>No.Hp</th>
+
                         </tr>
+                        @foreach ($cust as $cust)
+                            <tr>
+                                <td>{{ $loop->index + 1 }}</td>
+                                <td>{{ $cust->name }}</td>
+                                <td>{{ $cust->address }}</td>
+                                <td>{{ $cust->phone_number }}</td>
+
+                            </tr>
+                        @endforeach
                     </thead>
                     <tbody>
 
@@ -39,5 +47,5 @@
                 </table>
             </div>
         </div>
-    </div> --}}
+    </div>
 @endsection

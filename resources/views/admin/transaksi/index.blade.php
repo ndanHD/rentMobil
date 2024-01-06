@@ -30,7 +30,7 @@
                             <th>Deskripsi</th>
 
                         </tr>
-                        {{ $booking }}
+
                         @foreach ($booking as $booking)
                             <tr>
                                 <td>{{ $loop->index + 1 }}</td>

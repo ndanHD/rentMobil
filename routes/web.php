@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/dashboard', 'PageUserController@adminDashboard')->name('admin.dashboard');
 
 Route::get('/admin/cars', 'CarController@adminMobil')->name('admin.mobil');

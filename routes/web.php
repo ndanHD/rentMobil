@@ -32,3 +32,5 @@ Route::get('/admin/cust', 'PageUserController@customer')->name('customer');
 // Route::get('/user/sewa', 'BookingController@vSewaMobil')->name('user.sewa');
 Route::get('/user/sewa', 'BookingController@vSewaMobil')->name('user.sewa');
 Route::post('/user/sewa', 'BookingController@sewaMobil')->name('tambahSewa');
+Route::get('/user/kembali', 'BookingController@kembaliMobil')->name('user.kembali');
+Route::post('/user/kembalikansewa', 'BookingController@kembalikanMobil')->name('kembalikanSewa');

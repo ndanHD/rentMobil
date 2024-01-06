@@ -40,11 +40,13 @@
                 </li>
             @else
                 <li class="header">MAIN NAVIGATION</li>
-                <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a></li>
+                <li><a href="{{ route('admin.dashboard') }}"><i class="zmdi zmdi-home"></i><span>Dashboard</span> </a>
+                </li>
                 <li class="open"><a href="{{ route('user.sewa') }}"><i class="zmdi zmdi-blogger"></i><span>Sewa
                             Mobil</span>
                     </a></li>
-                <li class="open"><a href="blog-dashboard.html"><i class="zmdi zmdi-blogger"></i><span>Kembalikan
+                <li class="open"><a href="{{ route('user.kembali') }}"><i
+                            class="zmdi zmdi-blogger"></i><span>Kembalikan
                             Mobil</span>
                     </a></li>
             @endif

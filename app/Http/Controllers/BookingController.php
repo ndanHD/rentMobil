@@ -36,4 +36,21 @@ class BookingController extends Controller
         $car->save();
         return back()->with('sewasukses', 'Berhasil Sewa');
     }
+    public function kembaliMobil()
+    {
+        return view('user.kembali.index');
+    }
+    public function kembalikanMobil(Request $request)
+    {
+        $sewa = Booking::with('car')->whereHas('car', function ($query) use ($request) {
+            $query->where('license_plate', $request->plat);
+        })->get();
+
+        if ($sewa->isEmpty()) {
+            return back()->with('alert', 'data tidak ditemukan');
+        } else {
+
+            return response()->json($sewa);
+        }
+    }
 }

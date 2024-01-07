@@ -6,7 +6,7 @@ Aplikasi ini merupakan aplikasi sederhana untuk manajemen rental mobil yang diba
 
 ### Admin
 - Menambah, Mengedit, menghapus Data Mobil
-- Meihat Data Customer
+- Melihat Data Customer
 - Melihat Riwayat sewa
 
 ### Customer
@@ -24,7 +24,8 @@ Ikuti Langkah Berikut
 5. di dalam directory project buka terminal, ketikan "php artisan serve"
 6. di dalam directory project buka terminal, ketikan "php artisan db:seed --class=user"
 7. buka browser, ketikan url "localhost:8000"
-8. login menggunakan dengan username: "admin@admin.com" password: "admin"
+8. login menggunakan admin dengan username: "admin@admin.com" password: "admin"
+9. untuk customer silahkan mendaftarkan akun
 
 ## Contributors
 

@@ -30,12 +30,25 @@ class CarController extends Controller
 
         Car::create($validatedData);
 
-        return redirect(route('admin.mobil'))->with('tambah', 'Data Berhasil Ditambah');
+        return redirect(route('admin.mobil'))->with('alert', 'Data Berhasil Ditambah');
     }
+
     public function vEditMobil(Car $car)
     {
-        return view('admin.car.edit', ['car' => $car]);
+        // dd($car);
+
+        return view('admin.car.edit', ['cars' => $car]);
     }
+    public function editMobil(Request $request, Car $car)
+    {
+        // dd($car);
 
-
+        $car->brand = $request->brand;
+        $car->model = $request->model;
+        $car->license_plate = $request->license_plate;
+        $car->rental_rate_per_day = $request->rental_rate_per_day;
+        $car->availability = $request->availability;
+        $car->save();
+        return redirect(route('admin.mobil'))->with('alert', 'Data Berhasil Diupdate');
+    }
 }

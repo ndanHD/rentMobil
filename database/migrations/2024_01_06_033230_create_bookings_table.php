@@ -26,6 +26,7 @@ class CreateBookingsTable extends Migration
             $table->dateTime('end_date');
             $table->decimal('total_cost', 8, 2);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

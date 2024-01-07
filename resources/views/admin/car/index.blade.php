@@ -1,5 +1,13 @@
 @extends('layouts.master')
 @section('title', 'Data Mobil')
+@section('addCss')
+    {{-- <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css"> --}}
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.7/css/dataTables.bootstrap5.min.css">
+    <!-- Include jQuery -->
+
+
+@endsection
 @section('content')
     <div class="block-header">
         <div class="row">
@@ -24,7 +32,7 @@
     <div class="container-fluid">
         <div class="card">
             <div class="card-body">
-                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                <table class="table table-bordered table-striped table-hover js-basic-example" id="table">
                     <thead>
                         <tr>
                             <th>No.</th>
@@ -35,6 +43,9 @@
                             <th>Status</th>
                             <th>aksi</th>
                         </tr>
+
+                    </thead>
+                    <tbody>
                         @foreach ($car as $car)
                             <tr>
 
@@ -56,17 +67,25 @@
                                 </td>
                             </tr>
                         @endforeach
-                    </thead>
-                    <tbody>
-
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    @if (session('tambah'))
+    @if (session('alert'))
         <script>
-            alert('{{ session('tambah') }}')
+            alert('{{ session('alert') }}')
         </script>
     @endif
+@endsection
+@section('addJs')
+    <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+    <!-- Include DataTables JavaScript files -->
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.bootstrap5.min.js"></script>
+    <script>
+        new DataTable('#table');
+    </script>
+
 @endsection

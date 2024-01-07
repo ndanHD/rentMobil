@@ -22,7 +22,7 @@
     <link rel="stylesheet" href="{{ asset('plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
     <!-- JQuery DataTable Css -->
     <link rel="stylesheet" href="{{ asset('plugins/jquery-datatable/dataTables.bootstrap4.min.css') }}">
-
+    @yield('addCss');
 </head>
 
 <body class="theme-blush">
